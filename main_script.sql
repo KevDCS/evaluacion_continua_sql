@@ -240,8 +240,6 @@ having count(pedidos.id_pedido) > 1;
 10. Tiempo Promedio entre Pedidos:
 Calcula el tiempo promedio que pasa entre pedidos para cada cliente. 
 */
-select * from detalles_pedidos;
-select * from pedidos;
 
 select clientes.id_cliente, clientes.nombre, avg(datediff(pedidos.fecha_pedido,(select MIN(fecha_pedido) from pedidos where pedidos.id_cliente = clientes.id_cliente))) AS DIFERENCIA
 from detalles_pedidos
